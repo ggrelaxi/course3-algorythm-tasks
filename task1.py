@@ -4,6 +4,4 @@ def squirrel(N):
     for i in range(2, N + 1):
         factorial *= i
 
-    return int(str(factorial[0]))
-
-squirrel(5)
+    return int(str(factorial)[0])
