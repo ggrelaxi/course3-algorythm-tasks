@@ -54,6 +54,3 @@ def ConquestCampaign(N, M, L, battalion):
         days += 1
 
     return days
-
-
-print(ConquestCampaign(4, 5, 2, [2,2, 3,4]))
