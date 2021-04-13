@@ -22,18 +22,17 @@ def PatternUnlock(N, hits):
         lineNeighbors.append([x - 1, y])
         lineNeighbors.append([x + 1, y])
 
-        return [lineNeighbors]
-
+        return lineNeighbors
 
     for i in range(N - 1):
         actualCords = getCords(hits[i])
         nextCords = getCords(hits[i + 1])
         line = getNeighbors(actualCords)
-
+          
         if (nextCords in line):
             result += 1
         else:
             result += hypo
-    
+
     data = list(str(int(round(result, 5) * 100000)))
-    return "".join([num for num in data if num != 0])
+    return "".join([num for num in data if num != "0"])
