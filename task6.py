@@ -42,8 +42,3 @@ def PatternUnlock(N, hits):
     
     data = list(str(int(round(result, 5) * 100000)))
     return "".join([num for num in data if num != 0])
-
-        
-
-
-PatternUnlock(3, [1,2,9])
