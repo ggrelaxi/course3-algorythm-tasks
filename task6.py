@@ -3,11 +3,6 @@ def PatternUnlock(N, hits):
     hypo = 1.4142135623730951
     matrix = [[6,1,9], [5,2,8], [4,3,7]]
 
-
-    #матрица
-    for i in range(len(matrix)):
-        print(matrix[i])
-
     #координаты текущей точки
     def getCords(value):
         cords = []
