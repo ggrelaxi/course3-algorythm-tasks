@@ -16,6 +16,11 @@ class WordSearchTest(unittest.TestCase):
         string = "12345"
         subStr = "123"
         self.assertEqual(WordSearch(3, '12345', '123'), [1,0])
+
+    def testSuccessSingleWordOneMore(self):
+        string = "12345"
+        subStr = "123"
+        self.assertEqual(WordSearch(3, '12345', '45'), [0,1])
     
 if __name__ == "__main__":
     unittest.main()

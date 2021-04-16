@@ -14,11 +14,10 @@ def WordSearch(length, string, sub):
             stringWithoutBigWords.append(splitStr[i])
 
     actualStr = " ".join(stringWithoutBigWords).split(" ")
-
     resultStr = []
     resultCount = []
     index = 0
-    
+
     for i in range(len(actualStr)):
         subStr = ""
 
@@ -27,6 +26,8 @@ def WordSearch(length, string, sub):
             index = i + 1
         elif i == index:
             subStr = actualStr[i]
+            if i + 1 == len(actualStr):
+                resultStr.append(subStr)
             for j in range(i + 1, len(actualStr)):
                 if len(subStr + " " + actualStr[j]) > length:
                     resultStr.append(subStr)
@@ -35,8 +36,6 @@ def WordSearch(length, string, sub):
                 else:
                     subStr += " " + actualStr[j]
 
-    resultStr.append(splitStr[len(splitStr) - 1])
-                    
     for i in range(len(resultStr)):
         subStr = resultStr[i]
         word = subStr.split(" ")
