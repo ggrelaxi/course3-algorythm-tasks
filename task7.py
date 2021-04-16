@@ -2,10 +2,10 @@ def WordSearch(length, string, sub):
     splitStr = string.split(" ")
     stringWithoutBigWords = []
     for i in range(len(splitStr)):
-        if len(splitStr[i]) > 12:
+        if len(splitStr[i]) > length:
             subStr = ""
             for j in range(len(splitStr[i])):
-                if (j + 1) % 12 == 0 and j > 0:
+                if (j + 1) % length == 0 and j > 0:
                     subStr += splitStr[i][j] + " "
                 else:
                     subStr += splitStr[i][j]
@@ -13,32 +13,28 @@ def WordSearch(length, string, sub):
         else:
             stringWithoutBigWords.append(splitStr[i])
 
-    actualStr = " ".join(stringWithoutBigWords)
-    print(actualStr)
-    def needWrap(spaceIndex, ind):
-        prevWord = string[ind:spaceIndex]
-        nextWord = string[spaceIndex+1:].split(" ")[0]
-        if len(prevWord) == length:
-            return [spaceIndex, True]
-        elif len(prevWord) + len(nextWord) + 1 > length:
-            return [spaceIndex + 1, True]
-        else:
-            return [spaceIndex, False]
+    actualStr = " ".join(stringWithoutBigWords).split(" ")
 
     resultStr = []
     resultCount = []
     index = 0
-
+    
     for i in range(len(actualStr)):
-        if actualStr[i] == " ":
-            result = needWrap(i, index)
-            actIndex = result[0]
-            isNeedWrap = result[1]
-            if isNeedWrap == True:
-                subStr = actualStr[index:i]
-                resultStr.append(subStr)
-                index = actIndex
-    splitStr = actualStr.split(" ")
+        subStr = ""
+
+        if len(actualStr[i]) == length:
+            resultStr.append(actualStr[i])
+            index = i + 1
+        elif i == index:
+            subStr = actualStr[i]
+            for j in range(i + 1, len(actualStr)):
+                if len(subStr + " " + actualStr[j]) > length:
+                    resultStr.append(subStr)
+                    index = j
+                    break
+                else:
+                    subStr += " " + actualStr[j]
+
     resultStr.append(splitStr[len(splitStr) - 1])
                     
     for i in range(len(resultStr)):
@@ -48,5 +44,5 @@ def WordSearch(length, string, sub):
             resultCount.append(1)
         else:
             resultCount.append(0)
-    
+
     return resultCount
