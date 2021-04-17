@@ -6,8 +6,3 @@ def SumOfThe(N, data):
             summ += data[j]
         if actual == summ:
             return summ
-      
-
-
-
-SumOfThe(7, [100, -50, 10, -25, 90, -35, 90])
