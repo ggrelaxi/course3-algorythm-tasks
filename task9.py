@@ -1,10 +1,11 @@
 import math
-from unittest.loader import findTestCases
 
 def TheRabbitsFoot(s, encode):
     if encode == True:
         withoutSpaces = "".join(s.split(" "))
         length = len(withoutSpaces)
+        if length == 0:
+            return ""
         min = math.floor(length ** 0.5)
         max = math.ceil(length ** 0.5)
 
@@ -39,8 +40,8 @@ def TheRabbitsFoot(s, encode):
             if i < max:
                 word += " "
             result += word
-        
-        return result
+
+        return result.lstrip().rstrip()
 
     else:
         split = s.split(" ")
@@ -50,8 +51,6 @@ def TheRabbitsFoot(s, encode):
             if min < len(split[i]):
                 min = len(split[i])
         
-        print(min, max)
-
         matrix = []
 
         for i in range(min):
@@ -61,4 +60,4 @@ def TheRabbitsFoot(s, encode):
                 except IndexError:
                     break;
 
-        return "".join(matrix)
+        return "".join(matrix).lstrip().rstrip()
