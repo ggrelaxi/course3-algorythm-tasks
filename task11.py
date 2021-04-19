@@ -52,5 +52,3 @@ def BigMinus(s1, s2):
     resultStr =  "".join(result)
 
     return resultStr
-
-BigMinus('0', '1')
