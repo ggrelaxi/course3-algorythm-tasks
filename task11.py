@@ -4,6 +4,8 @@ def BigMinus(s1, s2):
 
     biggest = []
     smallest = []
+    if s1 == s2:
+        return "0"
     if len(s1) >= len(s2) and len(s1) > 1:
         biggest = list1
         smallest = list2
