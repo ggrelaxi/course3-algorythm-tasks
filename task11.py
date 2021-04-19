@@ -41,6 +41,5 @@ def BigMinus(s1, s2):
 
     result.reverse()
     resultStr =  "".join(result)
+    
     return resultStr
-
-BigMinus('1', '0')
