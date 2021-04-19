@@ -4,7 +4,7 @@ def BigMinus(s1, s2):
 
     biggest = []
     smallest = []
-    if len(s1) > len(s2):
+    if len(s1) >= len(s2):
         biggest = list1
         smallest = list2
     else:
@@ -40,4 +40,7 @@ def BigMinus(s1, s2):
             result.append(biggest[i])
 
     result.reverse()
-    return "".join(result)
+    resultStr =  "".join(result)
+    return resultStr
+
+BigMinus('1', '0')
