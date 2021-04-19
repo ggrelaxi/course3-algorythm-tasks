@@ -5,6 +5,7 @@ class BigMinusTest(unittest.TestCase):
     def testSuccess(self):
         self.assertEqual(BigMinus("1234567891", "1"), "1234567890")
         self.assertEqual(BigMinus("1", "321"), "320")
-        self.assertEqual(BigMinus("-1234567891", "1"), "1234567892")
+        self.assertEqual(BigMinus("1323000012323", "13239"), "1322999999084")
+
 if __name__ == "__main__":
     unittest.main()
