@@ -25,5 +25,5 @@ def MassVote(N, Votes):
     elif WinnerCount == 1:
         if maxVotes > middleVotesValue:
             return "majority winner " + str(winnerIndex)
-        elif maxVotes < middleVotesValue:
+        elif maxVotes <= middleVotesValue:
             return "minority winner " + str(winnerIndex)

@@ -6,6 +6,7 @@ class MassVoteTest(unittest.TestCase):
         self.assertEqual(MassVote(5, [60,10,10,15,5]), "majority winner 1")
         self.assertEqual(MassVote(3, [10,15,10]), "minority winner 2")
         self.assertEqual(MassVote(3, [10,10,10]), "no winner")
+        self.assertEqual(MassVote(3, [23, 50, 27]), "minority winner 2")
 
 if __name__ == "__main__":
     unittest.main()
