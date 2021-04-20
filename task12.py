@@ -27,11 +27,3 @@ def MassVote(N, Votes):
             return "majority winner " + str(winnerIndex)
         elif maxVotes < middleVotesValue:
             return "minority winner " + str(winnerIndex)
-        
-
-    
-
-
-
-print(MassVote(3, [10,10,10]))
-
