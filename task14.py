@@ -35,6 +35,10 @@ def Unmanned(L, N, track):
         return result
     
     time = track[0][0]
+
+    if L < time:
+        return L
+
     totalDistance = L
 
     for i in range(N):
