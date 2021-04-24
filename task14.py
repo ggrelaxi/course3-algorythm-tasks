@@ -45,7 +45,7 @@ def Unmanned(L, N, track):
         distance, redTime, greenTime = track[i]
     
         lightsRange = getlightsRange(time, track[i])
-        
+       
         actualColor = ""
         timeIndex = 0
 
@@ -56,6 +56,8 @@ def Unmanned(L, N, track):
                 actualColor = color
 
         if actualColor == "red":
-            totalDistance += redTime - timeIndex
+            timeLosses = redTime - timeIndex
+            totalDistance += timeLosses
+            time += distance + timeLosses
 
     return totalDistance

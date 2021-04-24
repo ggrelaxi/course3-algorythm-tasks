@@ -6,6 +6,7 @@ class UnmannedTest(unittest.TestCase):
         self.assertEqual(Unmanned(10, 2, [[3,5,5], [5,2,2]]), 12)
         self.assertEqual(Unmanned(10, 1, [[3,5,5]]), 12)
         self.assertEqual(Unmanned(10, 2, [[11,5,5],[15,2,2]]), 10)
+        self.assertEqual(Unmanned(10, 2, [[3,6,2],[6,2,2]]), 14)
 
 if __name__ == "__main__":
     unittest.main()
