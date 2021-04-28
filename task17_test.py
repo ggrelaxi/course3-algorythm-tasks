@@ -10,6 +10,7 @@ class LineAnalysisTest(unittest.TestCase):
         self.assertEqual(LineAnalysis("*.*"), True)
         self.assertEqual(LineAnalysis("*..*...*..*..*..*..*"), False)
         self.assertEqual(LineAnalysis("*..*..*..*..*..**..*"), False)
+        self.assertEqual(LineAnalysis('*......*.......*'), False)
 
 if __name__ == "__main__":
     unittest.main()
