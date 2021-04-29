@@ -29,7 +29,7 @@ def MisterRobot(N, data):
 
     endOfRange = N - 3
 
-    while result == False:
+    while (int(time.time() - start_time) < 1):
         startSlice = random.randint(0,endOfRange)
         changePart = tempArray[startSlice:startSlice+3]
 
