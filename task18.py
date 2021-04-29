@@ -30,24 +30,13 @@ def MisterRobot(N, data):
     endOfRange = N - 3
 
     while (int(time.time() - start_time) < 1):
-        startSlice = random.randint(0,endOfRange)
+        startSlice = random.randint(0, endOfRange)
         changePart = tempArray[startSlice:startSlice+3]
+        indexOne, indexTwo, indexThree = changePart
 
-        sortSlice = sorting(changePart)
-
-        for i in range(3):
-            indexOne, indexTwo, indexThree = changePart
-
-            if changePart == sortSlice:
-                break
-            else:
-                changePart[i] = indexTwo
-                changePart[i+1] = indexThree
-                changePart[i+2] = indexOne
-
-        tempArray[startSlice] = indexOne
-        tempArray[startSlice+1] = indexTwo
-        tempArray[startSlice+2] = indexThree
+        tempArray[startSlice] = indexTwo
+        tempArray[startSlice+1] = indexThree
+        tempArray[startSlice+2] = indexOne
 
         if tempArray == sortArray:
             result = True
