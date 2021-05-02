@@ -30,12 +30,28 @@ def ShopOLAP(N, items):
                 result[i+1][0] = item
                 result[i+1][1] = count
                 change = True
-
-    result.sort()
     
     for i in range(len(result)):
         item = result[i]
         string = " ".join(item)
         resultArrayStr.append(string)
 
-    return resultArrayStr  
+    for i in range(len(resultArrayStr) - 1):
+        item, count = resultArrayStr[i].split(" ")
+        nextItem, nextCount = resultArrayStr[i + 1].split(" ")
+        part = []
+
+        if int(count) == int(nextCount):
+            part = [resultArrayStr[i]]
+            for j in range(i + 1, len(resultArrayStr)):
+                partItem, partCount = resultArrayStr[j].split(" ")
+                if int(count) == int(partCount):
+                    string = partItem + " " + partCount
+                    part.append(string)
+        
+        part.sort()
+
+        for x in range(len(part)):
+            resultArrayStr[i + x] = part[x]
+
+    return resultArrayStr
