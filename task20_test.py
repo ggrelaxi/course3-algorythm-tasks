@@ -2,15 +2,15 @@ from logging import basicConfig
 import unittest
 from task20 import BastShoe
 
-class BastShoeTest(unittest.TestCase):
-    def testSuccess(self):
-        BastShoe("1 Привет")
-        BastShoe("1 , Мир")
-        BastShoe("2 5")
-        self.assertEqual(BastShoe("3 1"), "р")
-
-
-
+class BashShoeGetSymbolTest(unittest.TestCase):
+    def testGetSymbol(self):
+        BastShoe("1 a")
+        BastShoe("1 b")
+        BastShoe("1 c")
+        BastShoe("1 d")
+        self.assertEqual(BastShoe("1 e"), "abcde")
+        self.assertEqual(BastShoe("3 0"), "a")
+        self.assertEqual(BastShoe("3 4"), "e")
 
 if __name__ == "__main__":
     unittest.main()

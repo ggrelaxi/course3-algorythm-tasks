@@ -48,11 +48,9 @@ def BastShoe(command):
     elif operationNumber == 3:
         try:
             symbol = resultStr[int(subString)]
-            resultStr = symbol
-            return resultStr
+            return symbol
         except IndexError:
-            resultStr = ""
-            return resultStr
+            return ""
     
     elif operationNumber == 4:
         lastOperationId = 4
