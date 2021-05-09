@@ -57,5 +57,3 @@ def SherlockValidString(s):
 
         symbols = []
         symbolsCount = []
-
-print(SherlockValidString("xxyyzzzz"))
