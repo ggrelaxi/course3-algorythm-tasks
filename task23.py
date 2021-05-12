@@ -56,10 +56,9 @@ def TreeOfLife(H, W, N, tree):
                     
                 except IndexError:
                     continue
-                        
-    
 
     resultArr = []
+    
     for i in range(len(result)):
         tempString = result[i]
         temp = ""
@@ -72,28 +71,3 @@ def TreeOfLife(H, W, N, tree):
         resultArr.append(temp)
 
     return resultArr
-    # for i in range(len(result)):
-    #     tempString = result[i]
-    #     temp = ""
-    #     for j in range(len(tempString)):
-    #         char = tempString[j][1]
-    #         if char == 0:
-    #             temp = temp + "."
-    #         else:
-    #             temp = temp + "+"
-    #     print(temp)
-
-    # for i in range(len(result)):
-    #     tempString = result[i]
-    #     temp = ""
-    #     for j in range(len(tempString)):
-    #         char = tempString[j][1]
-    #         temp = temp + str(char)
-    #     print(temp)    
-            
-
-
-
-
-
-TreeOfLife(3,4,4,[".+..", "..+.", ".+.."])
