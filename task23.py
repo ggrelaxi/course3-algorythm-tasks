@@ -1,69 +1,72 @@
 def TreeOfLife(H, W, N, tree):
     result = []
 
-    for i in range(len(tree)):
-        tempString = list(tree[i])
+    for a in range(len(tree)):
+        tempString = list(tree[a])
         temp = []
-        for j in range(len(tempString)):
-            char = tempString[j]
+        for b in range(len(tempString)):
+            char = tempString[b]
             if char == ".":
-                temp.append([0, 0])
+                temp.append([0,0])
             else:
                 temp.append([1,1])
-        result.append(temp)        
+        result.append(temp)
 
-
-    for i in range(N):
-        if i % 2 == 0:
-            for j in range(len(result)):
-                tempString = result[j]
+    for c in range(N):
+        if c % 2 == 0:
+            for d in range(len(result)):
+                tempString = result[d]
                 for m in range(len(tempString)):
-                    result[j][m][1] += 1
-                    if result[j][m][0] == 0:
-                        result[j][m][0] = 1
+                    result[d][m][1] += 1
+                    if result[d][m][0] == 0:
+                        result[d][m][0] = 1
 
         else:
-            for j in range(len(result)):
-                tempString = result[j]
-                for m in range(len(tempString)):
-                    result[j][m][1] += 1
-                    if result[j][m][0] == 0:
-                        result[j][m][0] = 1    
+            for e in range(len(result)):
+                tempString = result[e]
+                for f in range(len(tempString)):
+                    result[e][f][1] += 1
+                    if result[e][f][0] == 0:
+                        result[e][f][0] = 1    
 
             deleteCords = []
 
-            for j in range(len(result)):
-                line = result[j]
-                for m in range(len(line)):
-                    pointState, pointAge = line[m]
+            for h in range(len(result)):
+                line = result[h]
+                for g in range(len(line)):
+                    pointState, pointAge = line[g]
                     if pointAge >= 3:
-                        top = [j - 1, m]
-                        deleteCords.append(top)
-                        bottom = [j + 1, m]
-                        deleteCords.append(bottom)
-                        left = [j, m - 1]
-                        deleteCords.append(left)
-                        right = [j, m + 1]
-                        deleteCords.append(right)
-                        deleteCords.append([j,m])
+                        if h - 1 >= 0:
+                            top = [h - 1, g]
+                            deleteCords.append(top)
+                        if h + 1 <= W:
+                            bottom = [h + 1, g]
+                            deleteCords.append(bottom)
+                        if g - 1 >= 0:    
+                            left = [h, g - 1]
+                            deleteCords.append(left)
+                        if g + 1 <= H:    
+                            right = [h, g + 1]
+                            deleteCords.append(right)
+                        deleteCords.append([h,g])
 
-            for j in range(len(deleteCords)):
-                w, h = deleteCords[j]
+            for n in range(len(deleteCords)):
+                wid, he = deleteCords[n]
                 
                 try:
-                    result[w][h][0] = 0
-                    result[w][h][1] = 0
+                    result[wid][he][0] = 0
+                    result[wid][he][1] = 0
                     
                 except IndexError:
                     continue
 
     resultArr = []
-    
-    for i in range(len(result)):
-        tempString = result[i]
+
+    for p in range(len(result)):
+        tempString = result[p]
         temp = ""
-        for j in range(len(tempString)):
-            char = tempString[j][1]
+        for r in range(len(tempString)):
+            char = tempString[r][1]
             if char == 0:
                 temp += "."
             else:
