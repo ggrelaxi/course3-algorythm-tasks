@@ -3,13 +3,13 @@ Matrix = ["123456", "234567", "345678", "456789"]
 def MatrixTurn(Matrix, M, N, T):
     for i in range(T):
         temp = []
+        result = []
 
         for i in range(M):
             line = Matrix[i]
             arr = list(line)
             temp.append(arr)
 
-        
         top = 0
         bottom = len(temp) - 1
         left = 0
@@ -45,13 +45,11 @@ def MatrixTurn(Matrix, M, N, T):
                 prev = current
 
             left += 1
-
-        result = []
         
         for i in range(len(temp)):
             line = "".join(temp[i])
             result.append(line)
-
+       
         Matrix = result
 
     return Matrix
