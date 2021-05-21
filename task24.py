@@ -1,4 +1,4 @@
-Matrix = ["123456", "234567", "345678", "456789"]
+import copy
 
 def MatrixTurn(Matrix, M, N, T):
     for i in range(T):
@@ -49,7 +49,6 @@ def MatrixTurn(Matrix, M, N, T):
         for i in range(len(temp)):
             line = "".join(temp[i])
             result.append(line)
-       
-        Matrix = result
-
-    return Matrix
+        
+        for i in range(len(Matrix)):
+            Matrix[i] = result[i]
