@@ -38,3 +38,4 @@ def Football(F, N):
                         return True
                     else:
                         temp2 = copy.copy(F)
+    return False
