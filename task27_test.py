@@ -6,6 +6,7 @@ class FootballTest(unittest.TestCase):
         self.assertEqual(Football([1,3,2], 3), True)
         self.assertEqual(Football([3,2,1], 3), True)
         self.assertEqual(Football([9,5,3,7,1], 5), False)
+        self.assertEqual(Football([1,2,3], 3), False)
 
 if __name__ == "__main__":
     unittest.main()

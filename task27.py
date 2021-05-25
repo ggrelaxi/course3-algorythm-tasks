@@ -28,7 +28,7 @@ def Football(F, N):
             temp2 = copy.copy(F)
 
             for y in range(N - 1):
-                for x in range(1, N):
+                for x in range(y + 1, N):
                     current = temp2[y]
                     next = temp2[x]
                     temp2[y] = next
@@ -39,3 +39,5 @@ def Football(F, N):
                     else:
                         temp2 = copy.copy(F)
     return False
+
+Football([1,2,3],3)
