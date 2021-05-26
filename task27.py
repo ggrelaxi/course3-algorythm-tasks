@@ -39,5 +39,3 @@ def Football(F, N):
                     else:
                         temp2 = copy.copy(F)
     return False
-
-Football([1,2,3],3)
