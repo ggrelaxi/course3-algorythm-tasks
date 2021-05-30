@@ -6,7 +6,7 @@ def Keymaker(K):
 
     for i in range(0, K):
         if i == 0:
-            for j in range(K):
+            for j in range(i, K):
                 doors[j] = True
 
         elif i == 1:
@@ -14,7 +14,7 @@ def Keymaker(K):
                 doors[m] = False
 
         elif i == 2:
-            for y in range(2, K, 3):
+            for y in range(i, K, 3):
                 value = doors[y]
                 if value == True:
                     doors[y] = False
@@ -22,14 +22,14 @@ def Keymaker(K):
                     doors[y] = True
 
         else:
-            for x in range(i, K, i):            
-                nextvalue = doors[i]
+            for x in range(i, K, i + 1):            
+                nextvalue = doors[x]
 
                 if nextvalue == True:
-                    doors[i] == False
+                    doors[x] = False
                 else:
-                    doors[i] == True
-        
+                    doors[x] = True
+
     result = ""
 
     for z in range(K):
